@@ -3,7 +3,7 @@
 
 import { defineConfig } from '#q-app/wrappers'
 
-export default defineConfig((ctx) => {
+export default defineConfig(() => {
   return {
     eslint: {
       // fix: true,
@@ -41,7 +41,7 @@ export default defineConfig((ctx) => {
       // 'themify',
       // 'line-awesome',
       // 'roboto-font-latin-ext', // this or either 'roboto-font', NEVER both!
-
+      
       'roboto-font', // optional, you are not bound to it
       'material-icons', // optional, you are not bound to it
     ],

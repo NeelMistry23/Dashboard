@@ -3,7 +3,14 @@ const routes = [
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/IndexPage.vue') }
+      { path: '', component: () => import('src/pages/DashboardPage.vue') },
+      { path: '/users', component: () => import('src/pages/ChartPage.vue') },
+      { path: '/analytics', component: () => import('src/pages/AnalyticsPage.vue') },
+      
+      { path: '/tables', component: () => import('src/pages/TablePage.vue') },
+      { path: '/forms', component: () => import('src/pages/FormsPage.vue') },
+      { path: '/footer', component: () => import('src/pages/FooterPage.vue') },
+      { path: '/checkout', component: () => import('src/pages/CheckOutPage.vue') },
     ]
   },
 
