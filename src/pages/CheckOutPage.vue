@@ -1,36 +1,38 @@
 <template>
-  <div class="checkout-container">
-    <!-- Steps Header -->
-    
+  <div class="checkout-container" style="width:100%">
+    <h1 class="title">✅Checkout</h1>
 
     <div class="checkout-content">
-        
-      <!-- Left: Shipping Form -->
-      <div class="form-section" v-if="step === 1">
-        <h2>Shipping Address</h2>
+      <!-- Shipping Form -->
+      <section class="form-section" v-if="step === 1">
+        <h2 class="section-title">🛒Shipping Address</h2>
+
         <div class="form-row">
           <input v-model="form.firstName" placeholder="First Name *" />
           <input v-model="form.lastName" placeholder="Last Name *" />
         </div>
+
         <input v-model="form.address1" placeholder="Address line 1 *" />
-        <input v-model="form.address2" placeholder="Address line 2 *" />
+        <br>
+        <input v-model="form.address2" placeholder="Address line 2" />
+<br>
         <div class="form-row">
           <input v-model="form.city" placeholder="City *" />
           <input v-model="form.state" placeholder="State" />
         </div>
+
         <div class="form-row">
           <input v-model="form.zip" placeholder="Zip Code" />
           <input v-model="form.country" placeholder="Country *" />
         </div>
-        <label>
+
+        <label class="checkbox-label">
           <input type="checkbox" v-model="form.useForPayment" />
           Use this address for payment details
         </label>
-        <button @click="nextStep">Next</button>
-      </div>
 
-    
-      
+        <button class="btn-primary" @click="nextStep">Next</button>
+      </section>
     </div>
   </div>
 </template>
@@ -52,13 +54,7 @@ export default {
         country: "",
         useForPayment: true,
       },
-     
     };
-  },
-  computed: {
-    total() {
-      return this.items.reduce((sum, item) => sum + item.price, 0);
-    },
   },
   methods: {
     nextStep() {
@@ -68,160 +64,138 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .checkout-container {
-  display: flex;
-  justify-content: space-between;
-  padding: 40px;
-  font-family: 'Roboto', sans-serif;
-
-  .steps {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 30px;
-    font-weight: 500;
-    font-size: 16px;
-    color: #9e9e9e;
-
-    span {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-
-    
-    }
-  }
-
-  .checkout-content {
-    display: flex;
-    gap: 40px;
-    width: 100%;
-  }
-
-  .form-section {
-    flex: 2;
-    background: #fff;
-    padding: 30px;
-    border-radius: 6px;
-
-    h2 {
-      margin-bottom: 20px;
-    }
-
-    .form-row {
-      display: flex;
-      gap: 20px;
-      margin-bottom: 15px;
-
-      input {
-        flex: 1;
-      }
-    }
-
-    input {
-      width: 100%;
-      padding: 12px 16px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 15px;
-    }
-
-    label {
-      display: flex;
-      align-items: center;
-      margin-top: 10px;
-      font-size: 14px;
-
-      input[type='checkbox'] {
-        margin-right: 8px;
-        accent-color: #000;
-      }
-    }
-
-    button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #2196f3;
-      color: #fff;
-      border: none;
-      border-radius: 50px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-
-      &:hover {
-        background-color: #1976d2;
-      }
-    }
-  }
-
-  .order-summary {
-    flex: 1.3;
-    background-color: #fafafa;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 24px;
-
-    h3 {
-      display: flex;
-      align-items: center;
-      font-size: 22px;
-      margin-bottom: 20px;
-
-      &::before {
-        content: '🛒';
-        margin-right: 10px;
-      }
-    }
-
-    .summary-item {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      border-bottom: 1px solid #e0e0e0;
-      padding: 12px 0;
-
-      img {
-        width: 90px;
-        height: 60px;
-        border-radius: 4px;
-        object-fit: cover;
-      }
-
-      .info {
-        display: flex;
-        flex-direction: column;
-        font-size: 14px;
-        color: #333;
-
-        .title {
-          font-weight: 600;
-        }
-
-        .price {
-          font-weight: 500;
-          color: #000;
-        }
-      }
-    }
-
-    .total {
-      margin-top: 20px;
-      text-align: right;
-      font-size: 18px;
-      font-weight: bold;
-
-      span {
-        color: #1976d2;
-      }
-    }
-  }
+  max-width: 480px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
 }
 
+.title {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #4f46e5; /* Indigo 600 */
+  font-size: 2rem;
+}
 
+.checkout-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #4338ca; /* Indigo 700 */
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="number"],
+input {
+  flex: 1;
+  padding: 0.65rem 1rem;
+  font-size: 1rem;
+  border: 1.5px solid #cbd5e1; /* slate-300 */
+  border-radius: 8px;
+  outline-offset: 2px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #6366f1; /* Indigo 500 */
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.3);
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: #4b5563; /* gray-700 */
+  cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #6366f1; /* Indigo */
+}
+
+.btn-primary {
+  background-color: #4f46e5; /* Indigo 600 */
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 10px;
+  padding: 0.85rem 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  align-self: flex-end;
+  box-shadow: 0 6px 15px rgba(79, 70, 229, 0.4);
+  min-width: 120px;
+}
+
+.btn-primary:hover {
+  background-color: #4338ca; /* Indigo 700 */
+  box-shadow: 0 8px 22px rgba(67, 56, 202, 0.6);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .checkout-container {
+    margin: 1rem 1rem;
+    padding: 1.5rem;
+    max-width: 100%;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="tel"],
+  input[type="number"],
+  input {
+    width: 100%;
+  }
+
+  .btn-primary {
+    width: 100%;
+    align-self: stretch;
+  }
+}
 </style>
+
+
+
+
 
 
 

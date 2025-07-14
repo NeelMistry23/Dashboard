@@ -1,89 +1,79 @@
 <template>
-  <q-page class="q-pa-md">
-    <div class="row q-col-gutter-md q-gutter-y-md">
+  <q-page class="q-pa-md" >
+    <div class="column q-gutter-md" style="width: 100%;">
 
       <!-- Simple Table -->
-      <div class="col-12 col-md-6">
-        <q-card>
-          <q-card-section class="text-h6">Simple Table</q-card-section>
-          <q-table :rows="rows" :columns="columns" row-key="id" />
-        </q-card>
-      </div>
+      <q-card class="shadow-2 rounded-borders">
+        <q-card-section class="text-h6 text-primary">Simple Table</q-card-section>
+        <q-table :rows="rows" :columns="columns" row-key="id"  bordered />
+      </q-card>
 
       <!-- Inverted Table -->
-      <div class="col-12 col-md-6">
-        <q-card class="bg-grey-10 text-white">
-          <q-card-section class="text-h6">Inverted Table</q-card-section>
-          <q-table
-            :rows="rows"
-            :columns="columns"
-            row-key="id"
-            color="white"
-            flat
-            dark
-          />
-        </q-card>
-      </div>
+      <q-card class="bg-grey-10 text-white shadow-2 rounded-borders">
+        <q-card-section class="text-h6">Inverted Table</q-card-section>
+        <q-table
+          :rows="rows"
+          :columns="columns"
+          row-key="id"
+          flat
+          dark
+          color="white"
+            
+        />
+      </q-card>
 
       <!-- Striped Table -->
-      <div class="col-12 col-md-6">
-        <q-card>
-          <q-card-section class="text-h6">Striped Table</q-card-section>
-          <q-table
-            :rows="rows"
-            :columns="columns"
-            row-key="id"
-            separator="horizontal"
-            :separator-color="'grey-4'"
-            :striped="true"
-          />
-        </q-card>
-      </div>
+      <q-card class="shadow-2 rounded-borders">
+        <q-card-section class="text-h6 text-primary">Striped Table</q-card-section>
+        <q-table
+          :rows="rows"
+          :columns="columns"
+          row-key="id"
+          separator="horizontal"
+          :separator-color="'grey-4'"
+          :striped="true"
+          bordered
+        />
+      </q-card>
 
       <!-- Fit Table -->
-      <div class="col-12 col-md-6" >
-        <q-card>
-          <q-card-section class="text-h6">Fit Table</q-card-section>
-          <q-table
-            :rows="rows"
-            :columns="columns"
-            row-key="id"
-            dense
-            flat
-          />
-        </q-card>
-      </div>
+      <q-card class="shadow-2 rounded-borders">
+        <q-card-section class="text-h6 text-primary">Fit Table</q-card-section>
+        <q-table
+          :rows="rows"
+          :columns="columns"
+          row-key="id"
+          dense
+          flat
+          bordered
+        />
+      </q-card>
 
       <!-- Bordered Table -->
-      <div class="col-12 col-md-6">
-        <q-card>
-          <q-card-section class="text-h6">Bordered Table</q-card-section>
-          <q-table
-            :rows="rows"
-            :columns="columns"
-            row-key="id"
-            bordered
-          />
-        </q-card>
-      </div>
+      <q-card class="shadow-2 rounded-borders">
+        <q-card-section class="text-h6 text-primary">Bordered Table</q-card-section>
+        <q-table
+          :rows="rows"
+          :columns="columns"
+          row-key="id"
+          bordered
+        />
+      </q-card>
 
       <!-- Borderless Table -->
-      <div class="col-12 col-md-6">
-        <q-card>
-          <q-card-section class="text-h6">Borderless Table</q-card-section>
-          <q-table
-            :rows="rows"
-            :columns="columns"
-            row-key="id"
-            flat
-          />
-        </q-card>
-      </div>
+      <q-card class="shadow-2 rounded-borders">
+        <q-card-section class="text-h6 text-primary">Borderless Table</q-card-section>
+        <q-table
+          :rows="rows"
+          :columns="columns"
+          row-key="id"
+          flat
+        />
+      </q-card>
 
     </div>
   </q-page>
 </template>
-
 
 <script setup>
 const columns = [
@@ -99,3 +89,17 @@ const rows = [
   { id: 4, name: 'Kanishk Joshi', email: 'kanishk@example.com' }
 ]
 </script>
+
+<style scoped>
+.q-card {
+  transition: box-shadow 0.3s ease;
+}
+.q-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+.q-table thead th {
+  background-color: #f5f7fa;
+  font-weight: 600;
+}
+</style>
+

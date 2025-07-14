@@ -1,55 +1,62 @@
 <template>
-  <q-page class="q-pa-md">
-    <!-- Stat Cards Row with Top Margin and Gutter -->
+  <q-page class="q-pa-md dashboard-page">
+    <!-- Stat Cards Row -->
     <div class="row q-col-gutter-md q-mt-md">
 
       <!-- Total Users -->
-      <q-card class="col-12 col-sm-6 col-md-3 col-lg-2 bg-primary text-white " style="margin-right: 10px; margin-left:15px;">
-        <q-card-section>
-          <q-icon name="account_circle" size="32px" color="white" />
-          <div class="text-h6" >Total Users</div>
-          <div class="text-subtitle1">1,245</div>
-           
-        </q-card-section>
-      </q-card>
+      <div class="col-12 col-sm-6 col-md-3">
+        <q-card class="stat-card bg-primary text-white">
+          <q-card-section>
+            <q-icon name="account_circle" size="32px" color="white" />
+            <div class="text-h6">Total Users</div>
+            <div class="text-subtitle1">1,245</div>
+          </q-card-section>
+        </q-card>
+      </div>
 
       <!-- Revenue -->
-      <q-card class="col-12 col-sm-6 col-md-3 col-lg-2 bg-secondary text-white" style="margin-right: 10px;">
-        <q-card-section>
-          <q-icon name="monetization_on" size="32px" color="white" />
-          <div class="text-h6">Revenue</div>
-          <div class="text-subtitle1">₹32,100</div>
-        </q-card-section>
-      </q-card>
+      <div class="col-12 col-sm-6 col-md-3">
+        <q-card class="stat-card bg-secondary text-white">
+          <q-card-section>
+            <q-icon name="monetization_on" size="32px" color="white" />
+            <div class="text-h6">Revenue</div>
+            <div class="text-subtitle1">₹32,100</div>
+          </q-card-section>
+        </q-card>
+      </div>
 
       <!-- Sales -->
-      <q-card class="col-12 col-sm-6 col-md-3 col-lg-2 bg-positive text-white" style="margin-right: 10px;">
-        <q-card-section>
-          <q-icon name="local_offer" size="32px" color="white" />
-          <div class="text-h6">Sales</div>
-          <div class="text-subtitle1">580</div>
-        </q-card-section>
-      </q-card>
+      <div class="col-12 col-sm-6 col-md-3">
+        <q-card class="stat-card bg-positive text-white">
+          <q-card-section>
+            <q-icon name="local_offer" size="32px" color="white" />
+            <div class="text-h6">Sales</div>
+            <div class="text-subtitle1">580</div>
+          </q-card-section>
+        </q-card>
+      </div>
 
       <!-- Notifications -->
-      <q-card class="col-12 col-sm-6 col-md-3 col-lg-2 bg-negative text-white">
-        <q-card-section>
-          <q-icon name="3p" size="32px" color="white" />
-          <div class="text-h6">Notifications</div>
-          <div class="text-subtitle1">13</div>
-        </q-card-section>
-      </q-card>
+      <div class="col-12 col-sm-6 col-md-3">
+        <q-card class="stat-card bg-negative text-white">
+          <q-card-section>
+            <q-icon name="notifications" size="32px" color="white" />
+            <div class="text-h6">Notifications</div>
+            <div class="text-subtitle1">13</div>
+          </q-card-section>
+        </q-card>
+      </div>
 
     </div>
 
     <!-- Charts Section -->
     <div class="q-mt-lg">
       <RevenueLineChart class="q-mb-md" />
-      <OrderTable/>
-      
+      <OrderTable />
     </div>
   </q-page>
 </template>
+
 
 
 <script setup>

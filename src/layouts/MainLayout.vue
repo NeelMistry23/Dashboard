@@ -1,6 +1,6 @@
 
 <template>
-  <q-layout view="lHh lpR lFf">
+  <q-layout view="lHh LpR lFf">
     <!-- Top Navbar -->
     <q-header elevated class="bg-primary text-white">
       <q-toolbar>
@@ -119,6 +119,8 @@ function toggleFullScreen() {
     document.exitFullscreen()
   }
 }
+
+
 </script>
 
 
@@ -131,10 +133,12 @@ function toggleFullScreen() {
   background-position: center;
   position: relative;
   color: white;
+
 }
 
 .sidebar-overlay {
   background: rgba(0, 0, 0, 0.6);
+  
   height: 100%;
   width: 100%;
   padding-bottom: 20px;
